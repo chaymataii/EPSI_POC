@@ -9,8 +9,8 @@
 #variable "exoscale_api_secret" { default = "{{env `EXOSCALE_API_SECRET`}}" }
 #variable "exoscale_api_zone" { default = "{{env `EXOSCALE_ZONE`}}" }
 
-variable "exoscale_api_key" { default = "EXOa498bb83e9c608c3c3e4935b" }
-variable "exoscale_api_secret" { default = "as2iQeN8nNiFl7EC0vcjYpN8WAbIl_mpeDNhI0JO2p4" }
+variable "exoscale_api_key" { default = "" }
+variable "exoscale_api_secret" { default = "" }
 variable "exoscale_api_zone" { default = "ch-dk-2" }
 
 source "exoscale" "epsi" {
