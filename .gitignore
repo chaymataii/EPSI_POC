@@ -3,5 +3,4 @@ terraform.tfstate.backup
 terraform.plan
 .terraform.lock.hcl
 .terraform
-stop_instances.yml
 dynamic_nodes_inventory

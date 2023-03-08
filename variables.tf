@@ -26,7 +26,7 @@ variable "prefix" {
 
 variable "instance_type" {
   type    = string
-  default = "standard.small"
+  default = "standard.medium"
 }
 
 variable "np_size" {
@@ -45,5 +45,9 @@ variable "ssh-key" {
   default = "ssh-key"
 }
 
+variable "template_id" {
+  type    = string
+  default = "c6a5e521-a510-4822-b95e-566aec824945"
+}
 
 

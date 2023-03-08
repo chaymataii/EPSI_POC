@@ -9,7 +9,7 @@ resource "exoscale_instance_pool" "epsi" {
   zone = var.zone
   name = "epsi-instance-pool"
   description = "epsi-instance-pool"
-  template_id   = "d4b61bd6-f596-4121-bc3a-1953d490d958"
+  template_id   = var.template_id
   instance_type = var.instance_type
   disk_size     = var.disk_size
   size          = var.np_size
@@ -21,7 +21,7 @@ resource "exoscale_instance_pool" "epsi" {
 resource "local_file" "dynamic_nodes_inventory"{
   content = templatefile("./hosts.tpl",
     {
-      intances_ips = exoscale_instance_pool.epsi.instances.*.public_ip_address
+      intances_ips = exoscale_instance_pool.epsi.instances.*.name
     }
   )
   filename = "./dynamic_nodes_inventory"
