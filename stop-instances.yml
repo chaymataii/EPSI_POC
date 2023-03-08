@@ -1,0 +1,20 @@
+---
+- name: Stop instances on Exoscale
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    api_key: ""
+    api_secret: ""
+    zone: "ch-dk-2"
+
+  tasks:
+    - name: ensure an instance is stopped
+      cs_instance:
+        api_key: "{{ api_key }}"
+        api_secret: "{{ api_secret }}"
+        api_url: "https://api.exoscale.ch/compute"
+        zone: "{{ zone }}"
+        name: "epsi"
+        state: stopped
+      delegate_to: localhost
